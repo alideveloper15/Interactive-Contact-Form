@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Form</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
   </head>
   <body>
-    <h1>Contact Us</h1>
+    <h1 class="heading">Contact Us</h1>
 
     <form id="contact-form">
       <label for="name">Name</label>
@@ -41,30 +42,12 @@
       <button>Submit</button>
     </form>
 
-    <script>
-      const form = document.querySelector("form");
+    <div class="alert">
+      <i class="fa-solid fa-circle-check"></i>
+      <p>Form Submitted Successfully</p>
+      <button class="close">Close</button>
+    </div>
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-
-        try {
-          let data = new FormData(form);
-
-          let url = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSeFVr_H7wOM0iCf4zoNlYgkv0ux7d16ld0kximC2ntShaAJRQ/formResponse"; // Your Google Form Action Url
-
-          let res = await fetch(url, {
-            method: "Post",
-            body: data,
-            mode: "no-cors",
-          });
-
-          form.reset();
-        } catch (error) {
-          console.log("error", error);
-        }
-      });
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
-
-<!-- Subscribe kiya Skills Sikhao YouTube Channel ko? -->
